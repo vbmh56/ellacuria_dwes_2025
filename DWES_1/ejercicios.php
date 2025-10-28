@@ -62,5 +62,22 @@
     contador();
     contador();
 
+    //9. Declara tres variables numéricas. Comprueba en una sola línea de código si al menos una de ellas es distinta de 0.
+    // Muestra el resultado por pantalla
+
+    $n1 = 1;
+    $n2 = 0;
+    $n3 = 0;
+    $res = $n1 || $n2 || $n3;
+    echo "Es alguna de las variables distinta de cero? La respuesta es: ";
+    var_dump($res);
+
+    //10. ¿Cómo podemos concatenar dos cadenas con un operador? Declara dos cadenas e imprime su concatenación por pantalla
+    $cadena1 = "Mi cadena 1 ";
+    $cadena2 = "Mi cadena 2 ";
+    $res = $cadena1 . $cadena2;
+    echo "$res \n";
+
+
 
 ?>
