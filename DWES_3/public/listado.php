@@ -15,7 +15,7 @@ try {
 }
 
 // Definir la vista que contendrá el HTML
-$view = __DIR__ . '/../views/listado.view.php';
+$view = __DIR__ . '/../views/producto/listado.view.php';
 
 // Incluir el layout
 require_once __DIR__ . '/../views/layout.php';

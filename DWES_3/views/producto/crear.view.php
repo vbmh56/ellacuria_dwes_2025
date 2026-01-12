@@ -1,7 +1,6 @@
+<?php include 'partials/errors.php'; ?>
 
 <h5 class="page-title text-center text-dark mb-4">Crear Producto</h5>
-
-<?php include __DIR__ . '/partials/errors.php'; ?>
 
 <div class="card card-dark shadow-lg mx-auto" style="max-width: 900px;">
   <div class="card-body p-4">
@@ -30,7 +29,7 @@
             <option value="">-- Selecciona una familia --</option>
                 <?php foreach ($familias as $familia): ?>
                     <option value="<?= htmlspecialchars($familia['cod']) ?>">
-                    <?= htmlspecialchars($familia['nombre']) ?>
+                        <?= htmlspecialchars($familia['nombre']) ?>
                     </option>
                 <?php endforeach; ?>
           </select>

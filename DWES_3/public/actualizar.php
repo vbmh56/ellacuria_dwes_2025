@@ -95,6 +95,6 @@ try {
 }
 
 // Cargar vista
-$view  = __DIR__ . '/../views/actualizar.view.php';
+$view  = __DIR__ . '/../views/producto/actualizar.view.php';
 
 require_once __DIR__ . '/../views/layout.php';

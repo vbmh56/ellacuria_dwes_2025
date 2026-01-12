@@ -1,7 +1,7 @@
 
 <h5 class="page-title text-center text-dark mb-4">Actualizar Producto</h5>
 
-<?php include __DIR__ . '/partials/errors.php'; ?>
+<?php include __DIR__ . '/../partials/errors.php'; ?>
 
 <div class="card card-dark shadow-lg mx-auto" style="max-width: 900px;">
   <div class="card-body p-4">
@@ -42,22 +42,26 @@
             min="0" 
             required
             value="<?= htmlspecialchars($old['pvp'] ?? '') ?>">
+        </div>        
+    
+        <div class="col-md-6">
+            <label class="form-label text-light">Familia</label>
+
+            <select name="familia" class="form-select" required>
+                <option value="">-- Selecciona una familia --</option>
+
+                <?php foreach ($familias as $familia): ?>
+                <option
+                    value="<?= htmlspecialchars($familia['cod']) ?>"
+                    <?= (($old['familia'] ?? '') === $familia['cod']) ? 'selected' : '' ?>
+                >
+                    <?= htmlspecialchars($familia['nombre']) ?>
+                </option>
+                <?php endforeach; ?>
+
+            </select>
         </div>
 
-        <div class="col-md-6">
-          <label class="form-label text-light">Familia</label>
-          <select name="familia" class="form-select" required>
-            <option value="">-- Selecciona una familia --</option>
-                <?php foreach ($familias as $familia): ?>
-                    <option 
-                        value="<?= htmlspecialchars($familia['cod']) ?>">
-                        <?= (($old['familia'] ?? '') === $familia['cod']) ? 'selected' : '' ?>
-                        <?= htmlspecialchars($familia['nombre']) ?>
-                    </option>
-                <?php endforeach; ?>
-          </select>
-        </div>
-    
         <div class="col-12">
           <label class="form-label text-light">Descripción</label>
           <textarea name="descripcion" class="form-control" rows="8" placeholder="Descripción">

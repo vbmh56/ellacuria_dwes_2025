@@ -5,7 +5,7 @@
 
 <h5 class="page-title text-center text-dark mb-4">Gestión de Productos</h5>
 
-<?php include __DIR__ . '/partials/messages_get.php'; ?>
+<?php include __DIR__ . '/../partials/messages_get.php'; ?>
 
 <div class="d-flex justify-content-start mb-3">
   <a href="crear.php" class="btn btn-success px-4">Crear</a>

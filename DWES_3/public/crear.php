@@ -65,7 +65,7 @@ try {
 
 
 // Definir la vista que contendrá el HTML
-$view = __DIR__ . '/../views/crear.view.php';
+$view = __DIR__ . '/../views/producto/crear.view.php';
 
 // Incluir el layout
 require_once __DIR__ . '/../views/layout.php';
