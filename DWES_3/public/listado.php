@@ -1,15 +1,14 @@
 <?php
 // Incluir la configuración de base de datos
 require_once __DIR__ . '/../config/db.php';
+require_once __DIR__ . '/../model/ProductoModel.php';
 
 try {
     // Obtener conexión PDO
     $pdo = getPDO();
     
     // Consultar productos
-    $sql = "SELECT id, nombre FROM productos ORDER BY id";
-    $stmt = $pdo->query($sql);
-    $productos = $stmt->fetchAll();
+    $productos = productos_all($pdo);
     
 } catch (Exception $e) {
     die("Error en la conexión: " . $e->getMessage());
