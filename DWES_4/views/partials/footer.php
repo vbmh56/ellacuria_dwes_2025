@@ -1,0 +1,1 @@
+<h5 class="text-center text-dark mt-4">Ignacio Ellacuría 2026</h5>

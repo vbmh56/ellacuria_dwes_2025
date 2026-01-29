@@ -1,0 +1,1 @@
+<h1 class="page-title text-center text-dark mb-4">Preferencias en Sesión</h1>

@@ -12,7 +12,7 @@ function getPDO(): PDO {
     $options = [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, // errores claros
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,       // arrays asociativos
-        // PDO::ATTR_EMULATE_PREPARES   => false,                  // prepares reales
+        PDO::ATTR_EMULATE_PREPARES   => false,                  // prepares reales
     ];
 
     return new PDO($dsn, $user, $pass, $options);
