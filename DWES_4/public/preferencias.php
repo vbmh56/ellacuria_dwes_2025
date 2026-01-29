@@ -1,10 +1,11 @@
 <?php
 
 $errores = [];
-$old = [
-    'idioma' => '',
-    'perfil_publico' => '',
-    'zona_horaria' => ''   
+
+$old = $_SESSION['preferencias'] ?? [
+  'idioma' => '',
+  'perfil_publico' => '',
+  'zona_horaria' => ''
 ];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -21,21 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // 3) Insertar si todo ok
         if (empty($errores)) {
-            $ok = true;
+           
             // Guardar en sesión    
-            $_SESSION['preferencias'] = [
-                'idioma'        => $old['idioma'],
-                'perfil_publico'=> $old['perfil_publico'],
-                'zona_horaria'  => $old['zona_horaria']
-            ];
-
-            if ($ok) {
-                // Redireccionar al listado
-                header('Location: preferencias.php');
-                exit;
-            } else {
-                $errores[] = "No se pudo insertar el producto.";
-            }
+            $_SESSION['preferencias'] = $old;
         }
     }
 
