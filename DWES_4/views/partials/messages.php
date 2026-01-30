@@ -1,16 +1,18 @@
 <?php
 // views/partials/messages_get.php
+// Mensajes de error y éxito basados en claves
+// pasadas a través de variables $error_message y $ok_message.
 
 $mensajes_error = [
-    'no_existe'   => 'Debes guardar primero las preferencias.'
+    'no_data' => 'Debes guardar primero las preferencias.'
 ];
 
 $mensajes_ok = [
-    'ok'      => 'Preferencias guardadas correctamente.'    
+    'preferences_saved' => 'Preferencias guardadas correctamente.'    
 ];
 
-$error_key = $_GET['error'] ?? null;
-$ok_key    = $_GET['ok'] ?? null;
+$error_key = $error_message ?? null;
+$ok_key    = $ok_message ?? null;
 ?>
 
 <?php if ($error_key && isset($mensajes_error[$error_key])): ?>

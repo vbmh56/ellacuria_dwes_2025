@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $errores = [];
 
 $old = $_SESSION['preferencias'] ?? [
@@ -10,23 +12,27 @@ $old = $_SESSION['preferencias'] ?? [
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        // 1) Recoger datos (y guardar "old" para repintar el formulario si falla)
-        $old['idioma'] = trim($_POST['idioma'] ?? '');
-        $old['perfil_publico'] = trim($_POST['perfil_publico'] ?? '');
-        $old['zona_horaria'] = trim($_POST['zona_horaria'] ?? '');
+    // 1) Recoger datos (y guardar "old" para repintar el formulario si falla)
+    $old['idioma'] = trim($_POST['idioma'] ?? '');
+    $old['perfil_publico'] = trim($_POST['perfil_publico'] ?? '');
+    $old['zona_horaria'] = trim($_POST['zona_horaria'] ?? '');
 
-        // 2) Validación mínima (FP)
-        if ($old['idioma'] === '') $errores[] = "El idioma es obligatorio.";
-        if ($old['perfil_publico'] === '') $errores[] = "El perfil público es obligatorio.";
-        if ($old['zona_horaria'] === '') $errores[] = "La zona horaria es obligatoria.";        
+    // 2) Validación mínima (FP)
+    if ($old['idioma'] === '') $errores[] = "El idioma es obligatorio.";
+    if ($old['perfil_publico'] === '') $errores[] = "El perfil público es obligatorio.";
+    if ($old['zona_horaria'] === '') $errores[] = "La zona horaria es obligatoria.";        
 
-        // 3) Insertar si todo ok
-        if (empty($errores)) {
-           
-            // Guardar en sesión    
-            $_SESSION['preferencias'] = $old;
-        }
-    }
+    // 3) Insertar si todo ok
+    if (empty($errores)) {
+        
+        // Guardar en sesión    
+        $_SESSION['preferencias'] = $old;            
+        $_SESSION['flash_ok'] = 'preferences_saved';
+
+        header('Location: preferencias.php');
+        exit;
+    }   
+}
 
 // Definir la vista que contendrá el HTML
 $view = __DIR__ . '/../views/app/preferencias.view.php';

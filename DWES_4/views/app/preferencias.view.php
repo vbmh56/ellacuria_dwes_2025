@@ -6,7 +6,7 @@
 <div class="card card-dark shadow-lg mx-auto" style="max-width: 520px;">
   <div class="card-body p-4">
 
-    <?php include __DIR__ . '/../partials/messages_get.php'; ?>
+    <?php include __DIR__ . '/../partials/messages_flash.php'; ?>
 
     <form method="post" action="preferencias.php">
       <div class="row g-3">
@@ -55,15 +55,23 @@
         </div>
 
         <!-- Botones -->
-        <div class="col-12 d-flex gap-2 mt-2">
-           <a href="mostrar.php" class="btn btn-detail">
-            Mostrar preferencias
+        <div class="col-12 d-flex justify-content-between align-items-center mt-4">
+  
+          <!-- Izquierda: Borrar -->
+          <a href="borrar.php" class="btn btn-danger">
+            Borrar
           </a>
-          <button type="submit" class="btn btn-primary">
-            Establecer preferencias
-          </button>                   
-        </div>
 
+          <!-- Derecha: Mostrar + Guardar -->
+          <div class="d-flex gap-3">
+            <a href="mostrar.php" class="btn btn-detail">
+              Mostrar
+            </a>
+            <button type="submit" class="btn btn-primary">
+              Guardar
+            </button>
+          </div>
+        </div>
       </div>
     </form>
 
