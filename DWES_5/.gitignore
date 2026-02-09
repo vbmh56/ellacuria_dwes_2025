@@ -1,0 +1,24 @@
+# Dependencias de Composer
+/app/vendor/
+
+# Cache de Blade (contenido)
+app/cache/*
+!app/cache/.gitkeep
+
+# Archivos generados por Composer
+/composer.phar
+
+# Archivos de entorno (si los hubiera en el futuro)
+.env
+.env.*
+
+# Logs
+*.log
+
+# IDE / editor
+.vscode/
+.idea/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

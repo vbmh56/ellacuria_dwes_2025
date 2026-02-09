@@ -1,0 +1,13 @@
+services:
+  php:
+    build: .
+    container_name: dwes_5_poo
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+      - composer_cache:/root/.composer
+      - ssh_data:/root/.ssh
+volumes:
+  composer_cache:
+  ssh_data:
