@@ -5,9 +5,11 @@ require __DIR__ . '/_init.php';
 
 use App\Datos;
 
+// Obtener id del producto
+$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+
 // Acción: añadir producto al carrito
 if (isset($_GET['add'])) {
-    $id = (int) $_GET['add'];
     $producto = Datos::findProductoById($id);
 
     if ($producto !== null) {
@@ -15,18 +17,15 @@ if (isset($_GET['add'])) {
         $_SESSION['carrito'] = $carrito;
     }
 
-    header('Location: index.php');
+    header('Location: detalle.php?id=' . $id);
     exit;
 }
 
-// Obtener productos para el listado
-$productos = Datos::getProductos();
+// Buscar producto
+$producto = Datos::findProductoById($id);
 
-// Renderizar vista
-echo $blade->render('listado', [
-    'productos' => $productos,
-    'carrito'   => $carrito,
+// Renderizar vista (aunque no exista el producto)
+echo $blade->render('detalle', [
+    'producto' => $producto,
+    'carrito'  => $carrito,
 ]);
-
-
-

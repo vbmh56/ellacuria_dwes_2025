@@ -54,7 +54,7 @@ class Producto {
     }
 
     public function getPvpIVA(): float{
-        return $this->pvp + ($this->pvp * (self::IVA / 100));
+        return round($this->pvp + ($this->pvp * (self::IVA / 100)), 2);
     }
 
     public function getFamilia(): string {

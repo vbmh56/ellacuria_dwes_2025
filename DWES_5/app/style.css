@@ -1,0 +1,42 @@
+body {
+	background: #62c7d3;
+} /* fondo turquesa */
+.page-title {
+	font-weight: 700;
+	letter-spacing: 0.2px;
+}
+.card-dark {
+	background: #2f343a;
+	border: 0;
+} /* panel oscuro */
+.table-darkish {
+	--bs-table-bg: #2f343a;
+	--bs-table-striped-bg: #3a4047;
+}
+.btn-detail {
+	background: #1aa7b6;
+	border: 0;
+	color: #fff;
+}
+.btn-detail:hover {
+	filter: brightness(0.95);
+	color: #fff;
+}
+.btn-update {
+	background: #f0b44b;
+	border: 0;
+	color: #222;
+}
+.btn-update:hover {
+	filter: brightness(0.95);
+	color: #222;
+}
+.btn-delete {
+	background: #d9534f;
+	border: 0;
+	color: #fff;
+}
+.btn-delete:hover {
+	filter: brightness(0.95);
+	color: #fff;
+}
