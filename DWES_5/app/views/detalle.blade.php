@@ -31,7 +31,7 @@
           {{ number_format($producto->getPvpIVA(), 2) }} €
         </p>
 
-        @if ($producto instanceof \App\ProductoDigital)
+        @if ($producto instanceof \App\IDescargable)
           <p class="card-text">
             <strong>Tamaño:</strong>
             {{ $producto->getSizeInMB() }} MB

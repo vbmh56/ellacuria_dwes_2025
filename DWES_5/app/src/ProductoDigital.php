@@ -2,7 +2,7 @@
 
 namespace App;
 
-class ProductoDigital extends Producto implements IRenderizable {
+class ProductoDigital extends Producto implements IDescargable {
 
     private int $sizeInMB;
 
@@ -17,15 +17,7 @@ class ProductoDigital extends Producto implements IRenderizable {
     ) {
         parent::__construct($id, $nombre, $nombre_corto, $descripcion, $pvp, $familia);
         $this->sizeInMB = $sizeInMB;
-    }
-
-	public function renderCard(): string {
-		// Implementation of renderCard method
-        return "<div>
-                    <h3>{$this->getNombre()}</h3>
-                    <p>Tamaño: {$this->sizeInMB}</p>
-                </div>";
-	}
+    }	
 
     public function getSizeInMB(): int {
         return $this->sizeInMB;
