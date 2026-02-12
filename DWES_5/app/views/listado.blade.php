@@ -22,7 +22,7 @@
 
               <p class="card-text mb-1">
                 <strong>Precio sin IVA:</strong>
-                {{ number_format($producto->getPrecio(), 2) }} €
+                {{ number_format($producto->getPvp(), 2) }} €
               </p>
 
               <p class="card-text mb-3">

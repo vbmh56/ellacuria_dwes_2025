@@ -45,7 +45,7 @@
       {{ number_format($total, 2) }} €
     </p>
 
-    <a href="index.php" class="btn btn-outline-secondary">
+    <a href="index.php" class="btn btn-primary">
       Volver al listado
     </a>
   @endif

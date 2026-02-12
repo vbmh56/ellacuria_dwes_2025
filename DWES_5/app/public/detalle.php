@@ -6,7 +6,7 @@ require __DIR__ . '/_init.php';
 use App\Datos;
 
 // Obtener id del producto
-$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+$id = (int) ($_GET['id'] ?? 0);
 
 // Acción: añadir producto al carrito
 if (isset($_GET['add'])) {

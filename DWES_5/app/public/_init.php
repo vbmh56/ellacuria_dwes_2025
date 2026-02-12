@@ -1,10 +1,9 @@
 <?php
 // app/public/_bootstrap.php
 declare(strict_types=1);
+require __DIR__ . '/../vendor/autoload.php';
 
 session_start();
-
-require __DIR__ . '/../vendor/autoload.php';
 
 use Jenssegers\Blade\Blade;
 use App\Carrito;
