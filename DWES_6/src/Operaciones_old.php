@@ -6,11 +6,6 @@ use PDO;
 
 class Operaciones
 {
-    /**
-     * @soap
-     * @param int $codigo
-     * @return float
-     */
     public function getPVP(int $codigo): float
     {
         $conexion = Conexion::getConexion();
@@ -21,15 +16,13 @@ class Operaciones
 
         $fila = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        return $fila ? (float)$fila['pvp'] : 0;
+        if (!$fila) {
+            return 0;
+        }
+
+        return (float) $fila['pvp'];
     }
 
-    /**
-     * @soap
-     * @param int $producto
-     * @param int $tienda
-     * @return int
-     */
     public function getStock(int $producto, int $tienda): int
     {
         $conexion = Conexion::getConexion();
@@ -43,13 +36,13 @@ class Operaciones
 
         $fila = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        return $fila ? (int)$fila['unidades'] : 0;
+        if (!$fila) {
+            return 0;
+        }
+
+        return (int) $fila['unidades'];
     }
 
-    /**
-     * @soap
-     * @return string[]
-     */
     public function getFamilias(): array
     {
         $conexion = Conexion::getConexion();
@@ -66,11 +59,6 @@ class Operaciones
         return $familias;
     }
 
-    /**
-     * @soap
-     * @param string $codFamilia
-     * @return int[]
-     */
     public function getProductosFamilia(string $codFamilia): array
     {
         $conexion = Conexion::getConexion();
