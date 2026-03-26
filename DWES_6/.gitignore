@@ -1,0 +1,48 @@
+# Composer
+/vendor/
+/composer.lock
+
+# PHPStorm, VSCode, etc
+.idea/
+.vscode/
+*.iml
+
+# logs and runtime
+*.log
+tmp/
+temp/
+cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated web server files
+public/*.log
+public/.htaccess
+
+# SQLite/db dumps
+*.sqlite
+*.db
+
+# PHPUnit
+.phpunit.result.cache
+
+# Node (if ever used)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# MacOS
+.AppleDouble
+.LSOverride
+
+# Windows
+ehthumbs.db
+Desktop.ini
+
+# Ignore environment files with secrets
+.env
+.env.local
+.env.*.local
