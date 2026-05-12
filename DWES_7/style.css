@@ -40,3 +40,34 @@ body {
 	filter: brightness(0.95);
 	color: #fff;
 }
+.estrellas {
+	display: inline-flex;
+	gap: 2px;
+	vertical-align: middle;
+}
+.estrella {
+	position: relative;
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	color: #f8f9fa;
+	font-size: 1rem;
+	line-height: 1;
+}
+.estrella::before {
+	content: "\2606";
+}
+.estrella-completa::before {
+	content: "\2605";
+}
+.estrella-media::before {
+	content: "\2606";
+}
+.estrella-media::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	overflow: hidden;
+	content: "\2605";
+}

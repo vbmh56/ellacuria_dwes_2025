@@ -82,3 +82,5 @@
     </div>
   </div>
 </div>
+
+<script src="js/votaciones.js"></script>
