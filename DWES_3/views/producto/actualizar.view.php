@@ -6,7 +6,7 @@
 <div class="card card-dark shadow-lg mx-auto" style="max-width: 900px;">
   <div class="card-body p-4">
 
-    <form method="post" action="crear.php">
+    <form method="post" action="actualizar.php?id=<?= htmlspecialchars($id) ?>">
       <div class="row g-3">
 
         <div class="col-md-6">

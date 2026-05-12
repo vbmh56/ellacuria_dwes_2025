@@ -1,4 +1,4 @@
-<?php include 'partials/errors.php'; ?>
+<?php include __DIR__ . '/../partials/errors.php'; ?>
 
 <h5 class="page-title text-center text-dark mb-4">Crear Producto</h5>
 
