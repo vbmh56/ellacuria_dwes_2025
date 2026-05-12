@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['usuario_id'])) {
+    header('Location: login.php');
+    exit;
+}
+
 // Incluir la configuración de base de datos
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/../model/ProductoModel.php';
